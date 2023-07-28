@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeadComponent } from './head.component';
 import { MenuModule } from 'src/app/shared/components/menu/menu.module';
+import { SearchModule } from 'src/app/shared/components/search/search.module';
 
 
 
@@ -11,7 +12,8 @@ import { MenuModule } from 'src/app/shared/components/menu/menu.module';
   ],
   imports: [
     CommonModule,
-    MenuModule
+    MenuModule,
+    SearchModule
   ],
   exports:[
     HeadComponent

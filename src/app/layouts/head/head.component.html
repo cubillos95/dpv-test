@@ -1,8 +1,11 @@
 <div class="box-search">
-    <img  class="w-100" src="../../../assets/svg/search-svgrepo-com.svg" alt="">
+    <img  (click)="openSearch()" class="w-100" src="../../../assets/svg/search-svgrepo-com.svg" alt="">
 </div>
 <div class="all-button">
   <div class="box-button">
     <app-menu></app-menu>
   </div>
 </div>
+
+
+<app-search class="popup" *ngIf="LogService.searchStatus"></app-search>

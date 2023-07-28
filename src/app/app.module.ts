@@ -7,6 +7,7 @@ import { HeadModule } from './layouts/head/head.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent

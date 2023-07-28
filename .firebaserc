@@ -1,0 +1,16 @@
+
+
+{
+  "projects": {
+    "default": "test-a9a65"
+  },
+  "targets": {
+    "test-a9a65": {
+      "hosting": {
+        "dvp-test": [
+          "test-a9a65"
+        ]
+      }
+    }
+  }
+}

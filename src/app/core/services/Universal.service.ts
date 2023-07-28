@@ -25,6 +25,14 @@ import { UrlApi } from "../constants/AllInfPage";
   readEpisodebyPage(page:number): Observable<any> {
     return this.http.get(this.urlBase + `api/episode/?page=${page}`);
   }
-
+  readCharacterbyPageandName(name:string,page:number){
+    return this.http.get(this.urlBase + `api/character/?page=${page}&name=${name}`);
+  }
+  readPlacesbyPageandName(name:string,page:number){
+    return this.http.get(this.urlBase + `api/location/?page=${page}&name=${name}`);
+  }
+  readEpisodebyPageandName(name:string,page:number){
+    return this.http.get(this.urlBase + `api/episode/?page=${page}&name=${name}`);
+  }
 
   }

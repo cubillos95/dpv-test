@@ -7,6 +7,7 @@ import { Character, Episode, LocationModel } from '../models/model';
     providedIn: 'root',
   })
   export class LogService {
+    searchStatus:boolean = false
     //*
     Page:number = 0
     MaxPage:number = 0
@@ -95,6 +96,54 @@ import { Character, Episode, LocationModel } from '../models/model';
         let backInf = await this.backService.readEpisodebyPage(1).toPromise()
         this.EpisodeList =  backInf.results
         console.log(backInf)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    async search(data:string,type:string){
+        switch(type){
+          case '/Home' :
+              this.searchCharcter(data)
+          break;
+          case '/places':
+            this.searchPaces(data)
+          break;
+          case '/episode':
+            this.searchEpisode(data)
+          break;
+        }
+
+    }
+    async searchCharcter(data:string){
+      try {
+        let backInf:any = await this.backService.readCharacterbyPageandName(data,2).toPromise()
+        console.log(backInf)
+        this.characterList = []
+        if(backInf != undefined)this.characterList = backInf.results as Array<Character>
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    async searchPaces(data:string){
+      try {
+        let backInf:any = await this.backService.readPlacesbyPageandName(data,2).toPromise()
+        console.log(backInf)
+        this.LocationList = []
+        if(backInf != undefined)this.LocationList = backInf.results
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    async searchEpisode(data:string){
+      try {
+        let backInf:any = await this.backService.readEpisodebyPageandName(data,2).toPromise()
+        console.log(backInf)
+        this.EpisodeList = []
+        if(backInf != undefined)this.EpisodeList =  backInf.results
+
       } catch (error) {
         console.log(error)
       }
