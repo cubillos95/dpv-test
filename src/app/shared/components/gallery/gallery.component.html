@@ -1,0 +1,11 @@
+<div class="box-img overflow-hidden" >
+  <div class="w-100 h-100 position-relative" (click)="selectCharacter(inf)">
+    <div class="img">
+      <img src="{{inf.image}}" alt="">
+    </div>
+    <div class="box-text">
+      <h1>{{inf.name}}</h1>
+      <h3 [ngClass]="{ 'color-red': inf.status == 'Dead'}">{{inf.status}}</h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="color vh-100 vw-100 color">
+</div>
+<div class="vh-100 w-85 overflow-y-scroll element-center row" >
+  <div class="col-xl-4 col-lg-6 col-md-12 height-box mt-1  position-relative" *ngFor="let character of LogService.characterList"><app-gallery [inf]="character" (message)="receiveMessage($event)"></app-gallery></div>
+</div>
+
+<app-char class="popup" [inf]="LogService.character" *ngIf="LogService.characterStatus" ></app-char>

@@ -1,0 +1,37 @@
+.box-search{
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width:   4.1vw;
+
+}
+.all-button{
+  position: absolute;
+  top: 46vh;
+  right: 40px;
+  width: 4.1vw;
+  background-color: white;
+  border-radius: 50px;
+  z-index: 1000;
+  box-shadow:10px 0px 15px  rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .box-button{
+    margin-top: 17px;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 	1080px) {
+  .all-button{
+    top: 30vh;
+    right: 5px;
+    width: 10vw;
+  }
+  .box-search{
+    right: 5px;
+    width: 10vw;
+  }
+}
