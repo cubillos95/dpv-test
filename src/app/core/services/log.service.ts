@@ -75,7 +75,6 @@ import { Character, Episode, LocationModel } from '../models/model';
       try {
         let backInf = await this.backService.readSpecificationsCharacter(id).toPromise()
         this.character = backInf
-        console.log(this.character)
       } catch (error) {
         console.log(error)
       }
@@ -85,7 +84,7 @@ import { Character, Episode, LocationModel } from '../models/model';
       try {
         let backInf = await this.backService.readLocationbyPage(1).toPromise()
         this.LocationList = backInf.results
-        console.log(backInf)
+
       } catch (error) {
         console.log(error)
       }
@@ -95,7 +94,6 @@ import { Character, Episode, LocationModel } from '../models/model';
       try {
         let backInf = await this.backService.readEpisodebyPage(1).toPromise()
         this.EpisodeList =  backInf.results
-        console.log(backInf)
       } catch (error) {
         console.log(error)
       }
@@ -118,7 +116,6 @@ import { Character, Episode, LocationModel } from '../models/model';
     async searchCharcter(data:string){
       try {
         let backInf:any = await this.backService.readCharacterbyPageandName(data,2).toPromise()
-        console.log(backInf)
         this.characterList = []
         if(backInf != undefined)this.characterList = backInf.results as Array<Character>
 
@@ -129,7 +126,6 @@ import { Character, Episode, LocationModel } from '../models/model';
     async searchPaces(data:string){
       try {
         let backInf:any = await this.backService.readPlacesbyPageandName(data,2).toPromise()
-        console.log(backInf)
         this.LocationList = []
         if(backInf != undefined)this.LocationList = backInf.results
 
@@ -140,7 +136,6 @@ import { Character, Episode, LocationModel } from '../models/model';
     async searchEpisode(data:string){
       try {
         let backInf:any = await this.backService.readEpisodebyPageandName(data,2).toPromise()
-        console.log(backInf)
         this.EpisodeList = []
         if(backInf != undefined)this.EpisodeList =  backInf.results
 
